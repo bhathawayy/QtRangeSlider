@@ -2,9 +2,11 @@
 PEP 517 doesn’t support editable installs
 so this file is currently here to support "pip install -e ."
 """
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
+    name="QtRangeSlider",
+    packages=find_packages(include=["qtrangeslider*"]),
     use_scm_version={"write_to": "qtrangeslider/_version.py"},
     setup_requires=["setuptools_scm"],
     install_requires=[
